@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  background: radial-gradient(#0f0f0f, #000000);
+  color: #00ffff;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #00ffe0;
+  text-shadow: 0 0 5px #00ffe0;
+}
+
+#game-area {
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #121212, #1f1f1f);
+  border: 2px solid #00ffe0;
+  box-shadow: 0 0 10px #00ffe0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+#player {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle at 10px 10px, #ff0040, #800020);
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 10px #ff0040;
+  transition: top 0.05s, left 0.05s;
+}
+
+.coin {
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #00f0ff, #003344);
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 8px #00f0ff;
+}
+
+.obstacle {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #3a3a3a, #111111);
+  border: 1px solid #888;
+  position: absolute;
+  border-radius: 6px;
+  box-shadow: 0 0 6px #ff0000;
+}
+
+#hud {
+  margin: 10px auto;
+  width: 300px;
+  height: 20px;
+}
+
+#energia-container {
+  background: #222;
+  border: 1px solid #00ffe0;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#barra-energia {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #00ffcc, #00bfff);
+  box-shadow: 0 0 8px #00ffe0;
+  transition: width 0.2s ease;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ff0077;
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: explodir 0.5s linear forwards;
+}
+
+@keyframes explodir {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5) translateY(-10px);
+    opacity: 0;
+  }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  animation: moveStars 40s linear infinite;
+  z-index: -1;
+  opacity: 0.15;
+}
+
+@keyframes moveStars {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
+
+#menu {
+  margin-top: 100px;
+}
+
+#btnJogar {
+  font-family: 'Orbitron', sans-serif;
+  background: #00ffe0;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffe0;
+  transition: background 0.3s;
+}
+
+#btnJogar:hover {
+  background: #00bfa6;
+}
+
+.mensagem {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,255,255,0.9);
+  color: #000;
+  padding: 20px 40px;
+  border-radius: 12px;
+  font-size: 24px;
+  box-shadow: 0 0 20px #00ffe0;
+  z-index: 1000;
+  animation: aparecer 0.6s ease-out;
+}
+
+@keyframes aparecer {
+  from { transform: translate(-50%, -60%); opacity: 0; }
+  to { transform: translate(-50%, -50%); opacity: 1; }
+}

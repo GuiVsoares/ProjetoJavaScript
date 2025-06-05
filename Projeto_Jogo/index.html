@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Neon Dash</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div id="menu">
+    <h1>Neon Dash</h1>
+    <button id="btnJogar">Jogar</button>
+  </div>
+
+  <div id="hud" style="display:none;">
+    <h2>Fase <span id="fase">1</span></h2>
+    <div id="energia-container">
+      <div id="barra-energia"></div>
+    </div>
+  </div>
+
+  <div id="game-area" style="display:none;">
+    <div id="player"></div>
+  </div>
+
+  
+  <audio id="musica" src="audio/musica.mp3" loop></audio>
+  <audio id="efeito" src="audio/efeito.mp3"></audio>
+
+  <div id="mensagem" class="mensagem" style="display:none;"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
